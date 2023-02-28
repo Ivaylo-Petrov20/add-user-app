@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+  background-color: #202020;
+}
+
+.user-form{
+  margin-top: 60px;
+  padding: 15px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.users{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem;
+  width: 50%;
+}

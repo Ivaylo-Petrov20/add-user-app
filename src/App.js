@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import styles from "./App.module.css";
+import UserForm from "./components/Users/UserForm";
+import UsersList from "./components/Users/UsersList";
+
+const users = [
+];
 
 function App() {
+  const [storedUsers, setStoredUsers] = useState(users);
+
+  const submitFormHandler = (userData) => {
+    setStoredUsers((prevUsers) => {
+      return [...prevUsers, userData];
+    });
+  };
+
+  const onDeleteUser = (userId) => {
+    const filteredUserList = storedUsers.filter(user => user.id !== userId);
+    setStoredUsers(filteredUserList);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section className={styles["user-form"]}>
+        <UserForm onSubmitForm={submitFormHandler} />
+      </section>
+      <section className={styles.users}>
+        {storedUsers.length > 0 && <UsersList onDelete={onDeleteUser} users={storedUsers} />}
+      </section>
     </div>
   );
 }

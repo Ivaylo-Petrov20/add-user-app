@@ -1,0 +1,30 @@
+.username-row,
+.age-row{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  line-height: 3rem;
+}
+
+.username-row input,
+.age-row input{
+  margin: 0 1rem;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.username-row label,
+.age-row label{
+  font-weight: bolder;
+  font-size: 1.1rem;
+  margin: 0 1rem;
+}
+
+.button-container{
+  display: flex;
+  justify-items: start;
+}
+
+
+

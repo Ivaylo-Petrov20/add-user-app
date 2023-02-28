@@ -1,0 +1,11 @@
+.user-container{
+  background-color: white;
+}
+
+.user-container p{
+  font-family: Arial;
+  margin: 1rem 1rem;
+  padding: 5px 15px;
+  text-align: start;
+  border: 1px solid #ccc;
+}
